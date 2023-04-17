@@ -9,6 +9,10 @@ import retrofit2.http.GET;
 
 public interface ServiceCategoria {
 
-    @GET("util/listaCategoria")
-    public Call<List<Categoria>> listaTodos();
+    @GET("util/listaCategoriaDeEditorial")
+    public Call<List<Categoria>> listaCategoriaDeEditorial();
+
+    @GET("util/listaCategoriaDeLibro")
+    public Call<List<Categoria>> listaCategoriaDeLibro();
+
 }
