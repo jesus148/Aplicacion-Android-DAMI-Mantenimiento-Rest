@@ -19,7 +19,7 @@
         android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -30,7 +30,7 @@
         android:drawableLeft="@drawable/baseline_person_24"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txtDireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,14 +41,14 @@
         android:drawableLeft="@drawable/baseline_location_on_24"/>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/cboPais"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_margin="30dp" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/cboCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"

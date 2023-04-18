@@ -28,4 +28,13 @@ public class Pais {
     public void setIso(String iso) {
         this.iso = iso;
     }
+
+    public Pais() {
+    }
+
+    public Pais(int idPais, String nombre, String iso) {
+        this.idPais = idPais;
+        this.nombre = nombre;
+        this.iso = iso;
+    }
 }
