@@ -26,7 +26,8 @@
         android:inputType="textPersonName"
         android:hint="Ingrese Nombre"
         android:padding="10dp"
-        android:layout_margin="30dp"/>
+        android:layout_margin="30dp"
+        android:drawableLeft="@drawable/baseline_person_24"/>
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -36,14 +37,15 @@
         android:inputType="textPersonName"
         android:hint="Ingrese Direccion"
         android:padding="10dp"
-        android:layout_margin="30dp"/>
+        android:layout_margin="30dp"
+        android:drawableLeft="@drawable/baseline_location_on_24"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_margin="30dp"/>
+        android:layout_margin="30dp" />
 
     <Spinner
         android:id="@+id/spinner2"
