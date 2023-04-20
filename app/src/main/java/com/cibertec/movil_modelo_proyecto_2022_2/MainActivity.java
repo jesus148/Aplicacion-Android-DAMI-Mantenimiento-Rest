@@ -1,6 +1,7 @@
 package com.cibertec.movil_modelo_proyecto_2022_2;
 
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -8,11 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.cibertec.movil_modelo_proyecto_2022_2.entity.Categoria;
 import com.cibertec.movil_modelo_proyecto_2022_2.entity.Editorial;
 import com.cibertec.movil_modelo_proyecto_2022_2.entity.Pais;
+import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceCategoria;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceEditorial;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServicePais;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
 
 import java.util.ArrayList;
@@ -32,8 +36,11 @@ public class MainActivity extends NewAppCompatActivity {
     List<Pais> lstp;
     ArrayAdapter<String> adaptadorC;
     ArrayList<String> lstCategorias = new ArrayList<String>();
+    List<Categoria> lstc;
     Button btnRegistEdit;
     ServicePais paisservice;
+    ServiceCategoria categoriaservice;
+    ServiceEditorial editorialservice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +51,11 @@ public class MainActivity extends NewAppCompatActivity {
         cboPais = findViewById(R.id.cboPais);
         cboPais.setAdapter(adaptadorP);
 
+        adaptadorC = new ArrayAdapter<String>(this, androidx.appcompat.R.layout.
+                support_simple_spinner_dropdown_item, lstCategorias);
+        cboCategoria = findViewById(R.id.cboCategoria);
+        cboCategoria.setAdapter(adaptadorC);
+
         txtNombre = findViewById(R.id.txtNombre);
         txtDireccion = findViewById(R.id.txtDireccion);
         cboPais = findViewById(R.id.cboPais);
@@ -51,7 +63,16 @@ public class MainActivity extends NewAppCompatActivity {
         btnRegistEdit = findViewById(R.id.btnRegistEdit);
 
         paisservice = ConnectionRest.getConnection().create(ServicePais.class);
-       /* btnRegistEdit.setOnClickListener(new View.OnClickListener() {
+
+        listaPaises();
+
+        categoriaservice = ConnectionRest.getConnection().create(ServiceCategoria.class);
+
+        listaCategoria();
+
+        editorialservice = ConnectionRest.getConnection().create(ServiceEditorial.class);
+
+        btnRegistEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nom = txtNombre.getText().toString();
@@ -62,10 +83,16 @@ public class MainActivity extends NewAppCompatActivity {
                 Editorial obj = new Editorial();
                 obj.setRazonSocial(nom);
                 obj.setDireccion(dir);
+                obj.setDescripcion(cat);
+                obj.setNombre(pais);
+                obj.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                obj.setFechaCreacion(FunctionUtil.getFechaActualStringDateTime());
+                obj.setEstado(1);
 
+                registraEditorial(obj);
             }
-        });*/
-        listaPaises();
+        });
+
     }
 
     public void listaPaises(){
@@ -87,21 +114,50 @@ public class MainActivity extends NewAppCompatActivity {
             }
         });
     }
-    /*public void registraEditorial(Editorial obj){
-        Call<Editorial> call =  service.insertaEditorial(obj);
+    public void listaCategoria(){
+        Call<List<Categoria>> call = categoriaservice.listaCategoriaDeEditorial();
+        call.enqueue(new Callback<List<Categoria>>() {
+            @Override
+            public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+                if (response.isSuccessful()){
+                    lstc = response.body();
+                    for(Categoria obj: lstc){
+                        lstCategorias.add(obj.getDescripcion());
+                    }
+                    adaptadorC.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+
+            }
+        });
+    }
+    public void registraEditorial(Editorial obj){
+        Call<Editorial> call =  editorialservice.insertaEditorial(obj);
         call.enqueue(new Callback<Editorial>() {
             @Override
             public void onResponse(Call<Editorial> call, Response<Editorial> response) {
-
+                if(response.isSuccessful()){
+                    Editorial objSalida = response.body();
+                    mensajeAlert("Registro exitoso" + objSalida.getIdEditorial());
+                }
             }
 
             @Override
             public void onFailure(Call<Editorial> call, Throwable t) {
-
+                mensajeAlert("Error" + t.getMessage());
             }
         });
-    }*/
+    }
 
+    public void mensajeAlert(String msg){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setMessage(msg);
+        alertDialog.setCancelable(true);
+        alertDialog.show();
+    }
 
 
 }
