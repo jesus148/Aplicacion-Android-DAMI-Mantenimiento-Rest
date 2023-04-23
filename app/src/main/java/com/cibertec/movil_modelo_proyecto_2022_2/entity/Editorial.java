@@ -12,24 +12,6 @@ public class Editorial {
     private Pais pais;
     private Categoria categoria;
 
-    private String nombre;
-    private String descripcion;
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 
     public int getIdEditorial() {
         return idEditorial;
@@ -104,7 +86,7 @@ public class Editorial {
     }
 
 
-    public Editorial(int idEditorial, String razonSocial, String direccion, String ruc, String fechaCreacion, String fechaRegistro, int estado, Pais pais, Categoria categoria, String nombre, String descripcion) {
+    public Editorial(int idEditorial, String razonSocial, String direccion, String ruc, String fechaCreacion, String fechaRegistro, int estado, Pais pais, Categoria categoria) {
         this.idEditorial = idEditorial;
         this.razonSocial = razonSocial;
         this.direccion = direccion;
@@ -114,8 +96,6 @@ public class Editorial {
         this.estado = estado;
         this.pais = pais;
         this.categoria = categoria;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
     }
 
     public Editorial() {
