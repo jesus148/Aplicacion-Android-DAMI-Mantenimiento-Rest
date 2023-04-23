@@ -87,13 +87,14 @@ public class EditorialRegistraActivity extends NewAppCompatActivity {
                 objPais.setIdPais(Integer.parseInt(idPais));
 
                 Categoria objCat = new Categoria();
-                objCat.setIdCategoria(Integer.parseInt(idPais));
+                objCat.setIdCategoria(Integer.parseInt(idCat));
 
                 Editorial obj = new Editorial();
                 obj.setRazonSocial(nom);
                 obj.setDireccion(dir);
                 obj.setCategoria(objCat);
                 obj.setPais(objPais);
+                obj.setRuc("12345678901");
                 obj.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
                 obj.setFechaCreacion(FunctionUtil.getFechaActualStringDateTime());
                 obj.setEstado(1);
@@ -112,14 +113,17 @@ public class EditorialRegistraActivity extends NewAppCompatActivity {
                 if (response.isSuccessful()){
                     lstp = response.body();
                     for(Pais obj: lstp){
-                        lstPaises.add(obj.getNombre());
+                        lstPaises.add(obj.getIdPais() + ":" + obj.getNombre());
                     }
                     adaptadorP.notifyDataSetChanged();
+                }else{
+                    mensajeAlert(response.toString());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Pais>> call, Throwable t) {
+                mensajeAlert("Error al acceder al Servicio Rest >>> " + t.getMessage());
             }
         });
     }
@@ -131,7 +135,7 @@ public class EditorialRegistraActivity extends NewAppCompatActivity {
                 if (response.isSuccessful()){
                     lstc = response.body();
                     for(Categoria obj: lstc){
-                        lstCategorias.add(obj.getDescripcion());
+                        lstCategorias.add(obj.getIdCategoria() + ":" + obj.getDescripcion());
                     }
                     adaptadorC.notifyDataSetChanged();
                 }
@@ -151,6 +155,8 @@ public class EditorialRegistraActivity extends NewAppCompatActivity {
                 if(response.isSuccessful()){
                     Editorial objSalida = response.body();
                     mensajeAlert("Registro exitoso" + objSalida.getIdEditorial());
+                }else{
+                    mensajeAlert(response.toString());
                 }
             }
 
