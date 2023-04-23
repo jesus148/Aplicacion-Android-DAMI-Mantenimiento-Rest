@@ -12,6 +12,7 @@ public class Editorial {
     private Pais pais;
     private Categoria categoria;
 
+
     public int getIdEditorial() {
         return idEditorial;
     }
@@ -83,6 +84,7 @@ public class Editorial {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
 
     public Editorial(int idEditorial, String razonSocial, String direccion, String ruc, String fechaCreacion, String fechaRegistro, int estado, Pais pais, Categoria categoria) {
         this.idEditorial = idEditorial;
