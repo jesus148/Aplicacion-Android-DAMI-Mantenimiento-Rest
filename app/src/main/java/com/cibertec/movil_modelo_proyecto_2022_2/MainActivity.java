@@ -146,6 +146,7 @@ public class MainActivity extends NewAppCompatActivity {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(objLibro);
+
         mensajeAlert(json);
 
         Call<Libro> call = servLibro.insertaEditorial(objLibro);
