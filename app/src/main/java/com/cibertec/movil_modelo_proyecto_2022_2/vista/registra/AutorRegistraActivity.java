@@ -169,7 +169,7 @@ public class AutorRegistraActivity extends AppCompatActivity {
                     Autor objRegistrado= response.body();
                     String msg ="Se registro el Autor \n";
                     msg += "ID: " + objRegistrado.getIdAutor()+"\n";
-                    msg += "Nombre del Autor"+ objRegistrado.getNombres();
+                    msg += "Nombre del Autor: "+ objRegistrado.getNombres();
                     mensajeAlert(msg);
 
                 }else{
