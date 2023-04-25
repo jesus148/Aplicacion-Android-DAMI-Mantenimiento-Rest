@@ -9,7 +9,12 @@ import retrofit2.http.GET;
 
 public interface ServiceModalidad {
 
+
+
+
+
     @GET("util/listaModalidad")
-    public Call<List<Modalidad>> listaTodos();
+    public abstract Call<List<Modalidad>> listamodalidad();
+
 
 }

@@ -210,7 +210,7 @@ public class AutorRegistraActivity extends AppCompatActivity {
 
 
     public void cargaPais() {
-        Call<List<Pais>> call = servicePais.listaTodos();
+        Call<List<Pais>> call = servicePais.listaPais();
         call.enqueue(new Callback<List<Pais>>() {
             @Override
             public void onResponse(Call<List<Pais>> call, Response<List<Pais>> response) {
