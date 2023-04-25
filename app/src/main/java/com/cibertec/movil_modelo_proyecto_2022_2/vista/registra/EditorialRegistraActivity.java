@@ -178,7 +178,7 @@ public class EditorialRegistraActivity extends NewAppCompatActivity {
     }
 
     public void listaPaises(){
-        Call<List<Pais>> call = paisservice.listaTodos();
+        Call<List<Pais>> call = paisservice.listaPais();
         call.enqueue(new Callback<List<Pais>>() {
             @Override
             public void onResponse(Call<List<Pais>> call, Response<List<Pais>> response) {
