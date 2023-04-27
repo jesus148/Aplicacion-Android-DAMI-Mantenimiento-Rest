@@ -13,7 +13,7 @@ public class Alumno {
     private String   fechaRegistro;
     private int estado;
 
-    private Pais   Pais;
+    private Pais   pais;
     private Modalidad   modalidad;
 
     public int getIdAlumno() {
@@ -105,12 +105,12 @@ public class Alumno {
         this.modalidad = modalidad;
     }
 
-    public com.cibertec.movil_modelo_proyecto_2022_2.entity.Pais getPais() {
-        return Pais;
+    public Pais getPais() {
+        return pais;
     }
 
-    public void setPais(com.cibertec.movil_modelo_proyecto_2022_2.entity.Pais pais) {
-        Pais = pais;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 
     public Alumno() {
