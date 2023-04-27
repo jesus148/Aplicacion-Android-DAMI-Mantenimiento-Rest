@@ -27,21 +27,37 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre" />
+
             <EditText
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Nombre" />
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apellidos" />
 
             <EditText
                 android:id="@+id/apellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Apellidos" />
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teléfono" />
 
             <EditText
                 android:id="@+id/telefono"
@@ -50,12 +66,24 @@
                 android:ems="10"
                 android:inputType="phone" />
 
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DNI" />
+
             <EditText
                 android:id="@+id/dni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo" />
 
             <EditText
                 android:id="@+id/correo"
@@ -64,13 +92,24 @@
                 android:ems="10"
                 android:inputType="textEmailAddress" />
 
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección" />
+
             <EditText
                 android:id="@+id/direccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Dirección" />
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de nacimiento" />
 
             <EditText
                 android:id="@+id/fNacimiento"
@@ -78,6 +117,12 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="date" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estado" />
 
             <EditText
                 android:id="@+id/estado"
@@ -109,7 +154,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/guardar"
+                android:id="@+id/btnGuardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Guardar" />

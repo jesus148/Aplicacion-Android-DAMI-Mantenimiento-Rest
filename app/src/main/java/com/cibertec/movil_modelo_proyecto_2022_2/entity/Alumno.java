@@ -12,8 +12,8 @@ public class Alumno {
     private String  fechaNacimiento;
     private String   fechaRegistro;
     private int estado;
-    private String   pais;
-    private Pais   idPais;
+
+    private Pais   Pais;
     private Modalidad   modalidad;
 
     public int getIdAlumno() {
@@ -96,21 +96,6 @@ public class Alumno {
         this.estado = estado;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public Pais getIdPais() {
-        return idPais;
-    }
-
-    public void setIdPais(Pais idPais) {
-        this.idPais = idPais;
-    }
 
     public Modalidad getModalidad() {
         return modalidad;
@@ -118,6 +103,14 @@ public class Alumno {
 
     public void setModalidad(Modalidad modalidad) {
         this.modalidad = modalidad;
+    }
+
+    public com.cibertec.movil_modelo_proyecto_2022_2.entity.Pais getPais() {
+        return Pais;
+    }
+
+    public void setPais(com.cibertec.movil_modelo_proyecto_2022_2.entity.Pais pais) {
+        Pais = pais;
     }
 
     public Alumno() {
