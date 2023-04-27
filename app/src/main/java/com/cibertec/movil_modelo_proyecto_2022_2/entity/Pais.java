@@ -2,8 +2,10 @@ package com.cibertec.movil_modelo_proyecto_2022_2.entity;
 
 public class Pais {
     private int idPais;
-    private String nombre;
+
     private String iso;
+    private String nombre;
+
 
     public int getIdPais() {
         return idPais;
@@ -29,12 +31,8 @@ public class Pais {
         this.iso = iso;
     }
 
-    public Pais() {
-    }
 
-    public Pais(int idPais, String nombre, String iso) {
-        this.idPais = idPais;
-        this.nombre = nombre;
-        this.iso = iso;
-    }
+
+
+
 }
