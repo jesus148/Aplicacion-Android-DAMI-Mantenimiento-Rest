@@ -87,7 +87,7 @@ public class LibroRegistraActivity extends NewAppCompatActivity {
         txtSer = findViewById(R.id.txtSerie);
         txtFech = findViewById(R.id.txtFechRegistro);
         txtEstado = findViewById(R.id.txtEstado);
-        btnReg = findViewById(R.id.btnRegistrar);
+        btnReg = findViewById(R.id.btnRegistrarAutor);
 
         Locale.setDefault( new Locale("es_ES"));
         txtFech.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +206,7 @@ public class LibroRegistraActivity extends NewAppCompatActivity {
         }
 
         public void cargaPais(){
-            Call<List<Pais>> call = servPais.listaTodos();
+            Call<List<Pais>> call = servPais.listaPais();
             call.enqueue(new Callback<List<Pais>>() {
 
                 public void onResponse(Call<List<Pais>> call, Response<List<Pais>> response) {

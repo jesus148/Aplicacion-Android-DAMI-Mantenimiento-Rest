@@ -1,7 +1,7 @@
 package com.cibertec.movil_modelo_proyecto_2022_2.vista.registra;
 
 
-import static com.cibertec.movil_modelo_proyecto_2022_2.R.id.cboPais;
+
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -127,7 +127,7 @@ public class AlumnoRegistraActivity extends NewAppCompatActivity {
     }
 
     public void listaPaises(){
-        Call<List<Pais>> call = servicePais.listaTodos();
+        Call<List<Pais>> call = servicePais.listaPais();
         call.enqueue(new Callback<List<Pais>>() {
             @Override
             public void onResponse(Call<List<Pais>> call, Response<List<Pais>> response) {
@@ -149,7 +149,7 @@ public class AlumnoRegistraActivity extends NewAppCompatActivity {
     }
 
     public void listaModalidad(){
-        Call<List<Modalidad>> call = serviceModalidad.listaTodos();
+        Call<List<Modalidad>> call = serviceModalidad.listamodalidad();
         call.enqueue(new Callback<List<Modalidad>>() {
             @Override
             public void onResponse(Call<List<Modalidad>> call, Response<List<Modalidad>> response) {
