@@ -31,8 +31,8 @@ public class Pais {
         this.iso = iso;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }
