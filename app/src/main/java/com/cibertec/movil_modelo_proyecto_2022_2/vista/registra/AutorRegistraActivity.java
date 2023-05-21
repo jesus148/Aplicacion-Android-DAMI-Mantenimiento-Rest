@@ -37,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AutorRegistraActivity extends AppCompatActivity {
+public class AutorRegistraActivity extends NewAppCompatActivity {
 
     Spinner spnPais;
     Spinner spnGrado;
@@ -160,7 +160,7 @@ public class AutorRegistraActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(objAutor);
 
-        mensajeAlert(json);
+        //mensajeAlert(json);
         Call<Autor> call = serviceAutor.insertarAutor(objAutor);
         call.enqueue(new Callback<Autor>() {
             @Override

@@ -429,7 +429,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(objRevista);
-        mensajeAlert(json);
+        //mensajeAlert(json);
 
 
 
