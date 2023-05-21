@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vista.consulta.EditorialConsultaActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="28dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,6 +18,16 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar" />
+
+    <ListView
+        android:id="@+id/lstEditorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
