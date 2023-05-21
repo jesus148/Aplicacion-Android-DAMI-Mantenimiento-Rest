@@ -19,15 +19,19 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnLista"
+        android:id="@+id/btnListar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Listar" />
 
-    <ListView
-        android:id="@+id/lstEditorial"
+    <GridView
+        android:id="@+id/gridEditorial"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="6dp"
+        />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
