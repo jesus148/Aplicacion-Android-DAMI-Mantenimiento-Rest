@@ -67,6 +67,15 @@
         <activity android:name=".vista.registra.UsuarioRegistraActivity" />
         <activity android:name=".vista.consulta.UsuarioConsultaActivity" />
 
+        <activity android:name=".vista.consulta.UsuarioConsultaDetalleActivity" />
+        <activity android:name=".vista.consulta.SalaConsultaDetalleActivity"  />
+        <activity android:name=".vista.consulta.RevistaConsultaDetalleActivity" />
+        <activity android:name=".vista.consulta.ProveedorConsultaDetalleActivity" />
+        <activity android:name=".vista.consulta.LibroConsultaDetalleActivity"  />
+        <activity android:name=".vista.consulta.EditorialConsultaDetalleActivity" />
+        <activity android:name=".vista.consulta.AutorConsultaDetalleActivity"  />
+        <activity android:name=".vista.consulta.AlumnoConsultaDetalleActivity"  />
+
     </application>
 
 </manifest>
