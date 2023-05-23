@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<!--LERR ESTE ES DE REVISTA -->
+
+
+<!-- ESTE LAYAOUT ES LLAMADO EN EL LAYAOUT PRINCIPAL LUEGO
+ESTE EL ACTIVTY SECUNDARIO DE ACA LLAMAMOS AL  OTRO ACTIVITY activyti_detalle_producto(principal secundario)
+  para q me meustre + mas importante pero solo de ese producto
+
+  ESTRUCTURA DE 1 TARJETA O CARD DE REVISTA ACA RESIVIMOS LA DATA Y CREAMOS LAS REVISTAS , UNA ESTRUCTURA PARA CADA UNO Y ASI LE MANDAMOS
+OSEA CON ALL ESTO ES PARA TRABAJAR EN EL CENTRO BASICAMENTE
+   xmlns:app="http://schemas.android.com/apk/res-auto": IMPORTAR ESTO ojo
+
+ aca puedes colocar mas siquieres para que lo agrande, recomendable es 10
+    app:cardElevation="5dp"
+
+    android:layout_gravity="center" : lo centra osea all este androidx.cardview.widget.CardView
+-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+
+    app:cardElevation="10dp"
+
+    >
+
+
+
+    <!--PENSAR COMO CSS ES CASI IGUAL CON EL MANEJO DE LOS DIV .ETC
+      BASICAMENTES ESTO ES PARA QUE MUESTRE 2 COLUMNAS POR CADA FILA
+      ADEMAS SE AGRANDARA CADA COLUMNA DE TAL FORMA QUE SE MUESTRE MAS GRANDE LA LISTA DE PRODUCTO
+
+
+      EXPLICACION ALL ESTO ES SOLO la estructura de 1 TARJETA DE PRODUCTO OSEA 1 OBJETO DE PRODUCTO DEL REST SU ESTRUCTURA
+      YA LUEGO EN EL ACTIVITY PRINCIPAL GridView HAREMOS 2 COLUMNAS POR FILA Y ASI SE MOSTRARA
+
+      ademas aca no mas va los relativo osea lo menos posible ya que es un item
+    -->
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/txtNombreRevista"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txtidRevista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+
+
+
+        <TextView
+            android:id="@+id/txtfrecuencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txtfechaCreacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

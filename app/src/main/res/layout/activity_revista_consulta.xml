@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    //RECORDAR ESTE ES EL ACTIVIY PRINCIPAL
+     de aca llamamos al activity_item_revista(secundario) que este acitivy secundario
+     y de ese activity llamara al otro actitvyty_item_revista(que es el acitvity princiapal secundario)
+-->
+
+
+
+
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.consulta.RevistaConsultaActivity"
-    android:orientation="vertical">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
 
-    <TextView
+
+
+
+
+
+
+
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:text="@string/txt_consulta_de_revista"
+        android:text="Lista de Revistas"
+            android:layout_margin="6dp"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            android:padding="11dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+        />
+
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar"
+        />
+
+
+
+
+
+    <!--    ACA SE MOSTRARA LA DATA AL CONSULTAR OSEA ALL PRODUCTO , usando el layout secundario item producto-->
+    <!--    es lo mismo que el listview
+         android:numColumns="2"    : muestr numero columnas
+         //meustra el espacio entre columnas
+           android:horizontalSpacing="6dp"
+            android:verticalSpacing="6dp"
+
+    -->
+    <GridView
+        android:id="@+id/gridRevista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="6dp"
+        />
+
+
+
+
+
+
 
 
 

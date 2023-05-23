@@ -1,10 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+
+
+
+<!--  RECORDAR QUE ESTE ES EL ACTIVITY PRINCIPAL (SECUNDARIO )SE USA JUNTO CON > JAVA> DETALLErevistaACTIVITY.JAVA-->
+<!-- OSEA ESTO ES 1 FILA O UN ROW en vertical  MAXIMO SUMARA 2
+     dependera de como pongas android:orientation="vertical" , si es vertical en este caso medira solo
+     si pones horizontal medira 2 en eso.
+    android:weightSum="2" : en vertical x la orientacion
+    OJO : ools:context=".vista.consulta.RevistaConsultaDetalleActivity" : llama al activity(controlador que le pertenece)
+    en este caso es activity principal secundario
+     ademas recordar : q este layaout es para mostrar detalles + especificos del rest padre junto con sus hijos rest
+    -->
+<!--tambien sumara 2-->
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.consulta.RevistaConsultaDetalleActivity"
-    >
+    android:weightSum="2"
+    android:orientation="vertical"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".vista.consulta.RevistaConsultaDetalleActivity">
+
+
+
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <!--  FILA SUMARA 1 EN vertical : android:layout_weight="1"
+        android:orientation="vertical" : ESTO SIGNIFICA Q TRABAJEREMOS EN VERTICAL
+        android:ems : El em es simplemente el tamaño de fuente. En un elemento con una fuente de 2 pulgadas, 1em significa 2 pulgadas.
+         Expresar tamaños, como márgenes y rellenos,
+       -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txNombreTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_margin="11dp"
+
+            android:textStyle="bold|italic"
+            android:padding="10dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/txtIdRevista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:layout_margin="11dp"
+            />
+
+        <TextView
+            android:id="@+id/txtFrecuencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_margin="11dp"
+            />
+
+        <TextView
+            android:id="@+id/txtfeCreacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_margin="11dp"
+            />
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!--    FILA SUMARA 1 EN vertical : android:layout_weight="1"
+        android:orientation="vertical" : ESTO SIGNIFICA Q TRABAJEREMOS EN VERTICAL -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+
+
+
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/txtdescripcionModal"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/txtNombrePais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
+
+        <!--        BOTON PARA REGRESAR-->
+        <Button
+            android:id="@+id/btnDetalleRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            android:layout_margin="10dp"
+            />
+
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
