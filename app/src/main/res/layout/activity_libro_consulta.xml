@@ -5,17 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vista.consulta.LibroConsultaActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:text="@string/txt_consulta_de_libro"
+        android:text="Lista de Libro - Perea Camacho"
+        android:textSize="20dp"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        />
+
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar"
+        />
+
+    <GridView
+        android:id="@+id/gridProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="6dp"
+        />
 
 
 
