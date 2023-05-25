@@ -1,6 +1,8 @@
 package com.cibertec.movil_modelo_proyecto_2022_2.entity;
 
-public class TipoProveedor {
+import java.io.Serializable;
+
+public class TipoProveedor implements Serializable {
 
     private int idTipoProveedor;
     private String  descripcion;
