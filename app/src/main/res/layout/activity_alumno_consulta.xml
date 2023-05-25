@@ -17,6 +17,21 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnListaAlumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar Alumnos"
+        />
+
+    <GridView
+        android:id="@+id/gridAlumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="6dp"
+        />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
