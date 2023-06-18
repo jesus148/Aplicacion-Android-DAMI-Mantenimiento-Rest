@@ -152,6 +152,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 //===========================================================
         //CARGA SPINNER O COMBO MODALIDAD
+        // OJO IMPORATANTE SI HAY UN  ERROR EL REST A CARGAR EL COMBO SOLO LEVANTAR TU INSOMIA Y Y DALE GET A LOS REST HIJOS(COMBOS)solo inicialos
 
         serviceModalidad = ConnectionRest.getConnection().create(ServiceModalidad.class);
 
@@ -168,6 +169,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 //===========================================================
         //CARGA SPINNER O COMBO PAIS
+        // OJO IMPORATANTE SI HAY UN  ERROR EL REST A CARGAR EL COMBO SOLO LEVANTAR TU INSOMIA Y Y DALE GET A LOS REST HIJOS(COMBOS)solo inicialos
 
         servicepais = ConnectionRest.getConnection().create(ServicePais.class);
 
@@ -276,7 +278,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 
         // ====================================================================================================
-        // INSERTAR METODO PARA EDITORIAL
+        // INSERTAR METODO PARA REVISTA
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -418,7 +420,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 
 
-    //METODO PRINCIPAL INSERTAR EDITORIAL
+    //METODO PRINCIPAL INSERTAR REVISTA
     //insertaRevista(Revista objRevista) : objRevista debe estar escrito igual en ServiceRevista osea el service rest que registraras
 
 
@@ -485,8 +487,12 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 
 
+
+
+
     //1 METODO MODALIDADES##############
     //CARGA COMBO MODADALIDAD SUBCLASE DE REVISTA
+    // OJO IMPORATANTE SI HAY UN  ERROR EL REST A CARGAR EL COMBO SOLO LEVANTAR TU INSOMIA Y Y DALE GET A LOS REST HIJOS(COMBOS)solo inicialos
     public void cargaModalidad(){
 
 
@@ -526,6 +532,7 @@ public class RevistaRegistraActivity extends NewAppCompatActivity {
 
 
     //2 METODO PAISES##############
+    // OJO IMPORATANTE SI HAY UN  ERROR EL REST A CARGAR EL COMBO SOLO LEVANTAR TU INSOMIA Y Y DALE GET A LOS REST HIJOS(COMBOS)solo inicialos
 
 
     public void cargaPaises(){

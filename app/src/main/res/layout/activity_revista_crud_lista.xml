@@ -8,15 +8,63 @@
     android:padding="15sp"
     tools:context=".vista.crud.AlumnoCrudListaActivity">
 
+
+
+
+    <!--    ESTE LAYAOUT SOLO LISTARA Y MOSTRA UN BOTON PARA REGISTRAR CON OTRO LAYAOUT
+
+//ACIVIITY secundario
+//RECORDAR QUE ALL ACITVYTY TIENE SU PROPIO LAYAOUT que es CLIENTECRUDREVISTAACTIVITY
+//este layaout solo listara y mostrara botones para listar y registrar
+
+//DE ESTA FORMA SE CREA
+//5 . crear   páquete    en el layaout
+//click derecho
+//new > activity > emptys views activity(con eso crea un layaout y 1 activity juntos)
+-->
+
+
+    <!--    TITULO -->
+
     <TextView
+        android:id="@+id/idCrudTituloCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:padding="10dp"
-        android:text="@string/txt_crud_de_revista"
+        android:text="Crud Revista"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
+    <!--    BOTON LISTAR -->
+    <Button
+        android:id="@+id/btnCrudListar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar" />
+
+
+
+    <!--    BOTON REGISTRAR
+    DE ACA LLAMARA AL activity_cliente_crud_formulario
+    -->
+    <Button
+        android:id="@+id/btnCrudRegistra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registra" />
+
+
+
+
+    <!--    MEUSTRA LA DATA PARA LISTAR-->
+    <GridView
+        android:id="@+id/gridCrudRevista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="1"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

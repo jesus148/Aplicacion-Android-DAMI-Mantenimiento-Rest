@@ -70,7 +70,6 @@ public class RevistaAdapter extends ArrayAdapter<Revista>  {
 
 
 
-
         //obtiene el id y guardarlo en un variable algo asi declarando
         TextView txtNombre = row.findViewById(R.id.txtNombreRevista);
         TextView txtidrevista = row.findViewById(R.id.txtidRevista);

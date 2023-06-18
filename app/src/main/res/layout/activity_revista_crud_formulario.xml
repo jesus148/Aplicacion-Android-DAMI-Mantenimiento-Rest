@@ -5,16 +5,168 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vista.crud.RevistaCrudFormularioActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="10dp">
 
-    <TextView
+
+
+
+
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:text="@string/txt_crud_de_revista"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/idCrudTituloRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="Registro Revista"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtNombreRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/revista"
+                android:ems="10"
+                android:hint="Ingrese Revista"
+                android:inputType="textPersonName"
+                android:textColorHint="#3F51B5" />
+            <!--    El em es simplemente el tamaño de fuente.-->
+            <EditText
+                android:id="@+id/txtFrecuenciaRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_margin="10dp"
+                android:textColorHint="#3F51B5"
+                android:hint="Ingrese frecuencia"
+                android:drawableLeft="@drawable/revista_2"
+                />
+
+
+
+
+            <EditText
+                android:id="@+id/txtFechaRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Ingrese fecha"
+                android:drawableLeft="@drawable/revista_3"
+                android:textColorHint="#3F51B5"
+                />
+
+
+
+            <TextView
+                android:id="@+id/idtxmoda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:paddingLeft="30dp"
+                android:text="Modalidad"
+                android:textColor="#3F51B5"
+                android:textSize="18sp"
+                />
+
+
+
+
+
+
+
+            <Spinner
+                android:id="@+id/spnModalidaRevis"
+                android:layout_width="match_parent"
+
+                android:layout_margin="10dp"
+                android:layout_height="39dp"
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/idtxpai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:paddingLeft="30dp"
+                android:text="Países"
+                android:textColor="#3F51B5"
+                android:textSize="18sp"
+                />
+
+            <Spinner
+                android:id="@+id/spnPaisRevis"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_margin="10dp"
+                />
+
+
+<!--            boton registrar -->
+            <Button
+                android:id="@+id/btnRegistRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:textColor="#FFFFFF"
+
+                android:text="Registrar" />
+
+
+
+            <!--            boton regresar -->
+
+            <Button
+                android:id="@+id/btnRegresaRevista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:textColor="#FFFFFF"
+
+                android:text="Regresar" />
+
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

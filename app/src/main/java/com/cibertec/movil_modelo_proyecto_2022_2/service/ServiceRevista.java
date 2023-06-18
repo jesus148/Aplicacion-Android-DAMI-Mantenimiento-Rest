@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ServiceRevista {
 
@@ -26,6 +27,12 @@ public interface ServiceRevista {
     //CL1 CONSULTA REVISTA
     @GET("revista")
     public abstract Call<List<Revista>> listarevista();
+
+
+
+    //CL3 actualiza   el put auto sabe que solo debe actualiar con el id
+    @PUT("revista")
+    public abstract Call<Revista> actualizaRevista(@Body Revista objRevista);
 
 
 
