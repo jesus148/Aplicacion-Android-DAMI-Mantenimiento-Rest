@@ -11,13 +11,35 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:padding="10dp"
-        android:text="@string/txt_crud_de_libro"
+        android:text="Lista Libro"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnCrudListar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar" />
+
+    <Button
+        android:id="@+id/btnCrudRegistra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registra"
+        android:layout_marginBottom="10dp"
+        />
+
+
+    <GridView
+        android:id="@+id/gridCrudLibro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="1"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"/>
 
 
 
