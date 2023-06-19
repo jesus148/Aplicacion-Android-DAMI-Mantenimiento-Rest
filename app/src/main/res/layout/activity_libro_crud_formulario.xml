@@ -96,7 +96,7 @@
                 android:textStyle="normal" />
 
             <Spinner
-                android:id="@+id/spnCrudClienteEstado"
+                android:id="@+id/spnCrudLibroCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -113,7 +113,7 @@
                 android:textStyle="normal" />
 
             <Spinner
-                android:id="@+id/spnCrudClienteCategoria"
+                android:id="@+id/spnCrudLibroPais"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"/>

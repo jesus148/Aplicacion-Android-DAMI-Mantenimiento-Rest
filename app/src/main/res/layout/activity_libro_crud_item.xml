@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="65dp"
     android:layout_gravity="center"
     android:layout_margin="20dp"
     app:cardElevation="120dp"
@@ -12,6 +12,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:orientation="horizontal"
         android:weightSum="5"
         >
@@ -38,7 +39,7 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/txtCrudClienteItemCategoria"
+            android:id="@+id/txtCrudLibroItemCategoria"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:textAlignment="center"
@@ -46,7 +47,7 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/txtCrudClienteItemPais"
+            android:id="@+id/txtCrudLibroItemPais"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:textAlignment="center"

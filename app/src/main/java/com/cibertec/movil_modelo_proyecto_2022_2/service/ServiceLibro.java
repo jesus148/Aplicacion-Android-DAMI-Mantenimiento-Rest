@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ServiceLibro {
     @POST("libro")
@@ -15,4 +16,6 @@ public interface ServiceLibro {
 
     @GET("libro")
     public abstract Call<List<Libro>> listaLibro();
+    @PUT("libro")
+    public abstract Call<Libro> actualizaLibro(@Body Libro objCliente);
 }
