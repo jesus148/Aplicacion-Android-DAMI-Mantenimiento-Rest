@@ -19,6 +19,7 @@ import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceCategoria;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceEditorial;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServicePais;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -185,6 +186,8 @@ public class EditorialCrudFormularioActivity extends NewAppCompatActivity {
                 objNewEditorial.setFechaCreacion(fec);
                 objNewEditorial.setPais(objNewPais);
                 objNewEditorial.setCategoria(objNewCategoria);
+                objNewEditorial.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                objNewEditorial.setEstado(1);
 
                 if (tipo.equals("REGISTRA")){
                     insertaEditorial(objNewEditorial);
