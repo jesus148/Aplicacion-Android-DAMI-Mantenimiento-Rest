@@ -136,6 +136,8 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 objNewProveedor.setContacto(contacto);
                 objNewProveedor.setPais(objNewPais);
                 objNewProveedor.setTipoProveedor(objNewTipoProveedor);
+                objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                objNewProveedor.setEstado(1);
 
                 if (tipo.equals("REGISTRAR")) {
                     insertaProveedor(objNewProveedor);
