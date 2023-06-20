@@ -32,6 +32,9 @@ import retrofit2.Response;
 
 public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
 
+    public static final String TIPO_REGISTRAR = "REGISTRAR";
+    public static final String TIPO_ACTUALIZAR = "ACTUALIZAR";
+
     Button btnCrudRegresar, btnCrudRegistra;
     TextView txtTitulo;
 
@@ -61,17 +64,17 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
         servicePais = ConnectionRest.getConnection().create(ServicePais.class);
         serviceTipoProveedor = ConnectionRest.getConnection().create(ServiceTipoProveedor.class);
 
-        btnCrudRegistra = findViewById(R.id.btnRegistrarProveedor);
+        btnCrudRegistra = findViewById(R.id.btnCRUDRegistrarProveedor);
         txtTitulo = findViewById(R.id.idCrudTituloProveedor);
 
-        txtRazonSocial = findViewById(R.id.txtRazonSocialProveedor);
-        txtRUC = findViewById(R.id.txtRUCProveedor);
-        txtDireccion = findViewById(R.id.txtDireccionProveedor);
-        txtTelefono = findViewById(R.id.txtTelefonoProveedor);
-        txtCelular = findViewById(R.id.txtCelularProveedor);
-        txtContacto = findViewById(R.id.txtContactoProveedor);
-        spnPais = findViewById(R.id.spnPaisProveedor);
-        spnTipoProveedor = findViewById(R.id.spnTipoProveedorProveedor);
+        txtRazonSocial = findViewById(R.id.txtCRUDRazonSocialProveedor);
+        txtRUC = findViewById(R.id.txtCRUDRUCProveedor);
+        txtDireccion = findViewById(R.id.txtCRUDDireccionProveedor);
+        txtTelefono = findViewById(R.id.txtCRUDTelefonoProveedor);
+        txtCelular = findViewById(R.id.txtCRUDCelularProveedor);
+        txtContacto = findViewById(R.id.txtCRUDContactoProveedor);
+        spnPais = findViewById(R.id.spnCRUDPaisProveedor);
+        spnTipoProveedor = findViewById(R.id.spnCRUDTipoProveedorProveedor);
 
         adaptadorPais = new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, lstPais);
         spnPais.setAdapter(adaptadorPais);
@@ -86,7 +89,7 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
         cargaPais();
         cargaTipoProveedor();
 
-        if (tipo.equals("ACTUALIZA")) {
+        if (tipo.equals(TIPO_ACTUALIZAR)) {
             objProveedorSeleccionado = (Proveedor) extras.get("var_objeto");
             txtRazonSocial.setText(objProveedorSeleccionado.getRazonsocial());
             txtRUC.setText(objProveedorSeleccionado.getRuc());
@@ -139,9 +142,9 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
                 objNewProveedor.setEstado(1);
 
-                if (tipo.equals("REGISTRAR")) {
+                if (tipo.equals(TIPO_REGISTRAR)) {
                     insertaProveedor(objNewProveedor);
-                } else if (tipo.equals("ACTUALIZAR")) {
+                } else if (tipo.equals(TIPO_ACTUALIZAR)) {
                     Proveedor objAux = (Proveedor) extras.get("var_objeto");
                     objNewProveedor.setIdProveedor(objAux.getIdProveedor());
                     actualizaProveedor(objNewProveedor);
@@ -213,7 +216,7 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                         lstPais.add(obj.getIdPais() + ":" + obj.getNombre());
                     }
                     adaptadorPais.notifyDataSetChanged();
-                    if (tipo.equals("ACTUALIZA")) {
+                    if (tipo.equals(TIPO_ACTUALIZAR)) {
                         Pais objPais = objProveedorSeleccionado.getPais();
                         String aux2 = objPais.getIdPais() + ":" + objPais.getNombre();
                         int pos = -1;
@@ -249,7 +252,7 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                         lstTipoProveedor.add(obj.getIdTipoProveedor() + ":" + obj.getDescripcion());
                     }
                     adaptadorTipoProveedor.notifyDataSetChanged();
-                    if (tipo.equals("ACTUALIZA")) {
+                    if (tipo.equals(TIPO_ACTUALIZAR)) {
                         TipoProveedor objTipoProveedor = objProveedorSeleccionado.getTipoProveedor();
                         String aux2 = objTipoProveedor.getIdTipoProveedor() + ":" + objTipoProveedor.getDescripcion();
                         int pos = -1;

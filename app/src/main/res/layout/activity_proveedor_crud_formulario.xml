@@ -33,7 +33,7 @@
                 android:text="Razón social:" />
 
             <EditText
-                android:id="@+id/txtRazonSocialProveedor"
+                android:id="@+id/txtCRUDRazonSocialProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -46,7 +46,7 @@
                 android:text="RUC:" />
 
             <EditText
-                android:id="@+id/txtRUCProveedor"
+                android:id="@+id/txtCRUDRUCProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -59,7 +59,7 @@
                 android:text="Dirección:" />
 
             <EditText
-                android:id="@+id/txtDireccionProveedor"
+                android:id="@+id/txtCRUDDireccionProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -72,7 +72,7 @@
                 android:text="Teléfono:" />
 
             <EditText
-                android:id="@+id/txtTelefonoProveedor"
+                android:id="@+id/txtCRUDTelefonoProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -85,7 +85,7 @@
                 android:text="Celular:" />
 
             <EditText
-                android:id="@+id/txtCelularProveedor"
+                android:id="@+id/txtCRUDCelularProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -98,7 +98,7 @@
                 android:text="Contacto:" />
 
             <EditText
-                android:id="@+id/txtContactoProveedor"
+                android:id="@+id/txtCRUDContactoProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,7 +111,7 @@
                 android:text="País:" />
 
             <Spinner
-                android:id="@+id/spnPaisProveedor"
+                android:id="@+id/spnCRUDPaisProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp" />
@@ -123,13 +123,13 @@
                 android:text="Tipo de Proveedor:" />
 
             <Spinner
-                android:id="@+id/spnTipoProveedorProveedor"
+                android:id="@+id/spnCRUDTipoProveedorProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp" />
 
             <Button
-                android:id="@+id/btnRegistrarProveedor"
+                android:id="@+id/btnCRUDRegistrarProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

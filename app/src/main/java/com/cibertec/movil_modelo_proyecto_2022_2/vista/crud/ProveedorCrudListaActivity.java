@@ -53,7 +53,7 @@ public class ProveedorCrudListaActivity extends NewAppCompatActivity {
                         ProveedorCrudFormularioActivity.class);
 
                 intent.putExtra("var_titulo", "REGISTRA PROVEEDOR");
-                intent.putExtra("var_tipo", "REGISTRA");
+                intent.putExtra("var_tipo", ProveedorCrudFormularioActivity.TIPO_REGISTRAR);
                 startActivity(intent);
             }
         });
@@ -74,8 +74,8 @@ public class ProveedorCrudListaActivity extends NewAppCompatActivity {
                 Intent intent = new Intent(
                         ProveedorCrudListaActivity.this,
                         ProveedorCrudFormularioActivity.class);
-                intent.putExtra("var_titulo", "ACTUALIZA PROVEEDOR");
-                intent.putExtra("var_tipo", "ACTUALIZA");
+                intent.putExtra("var_titulo", "ACTUALIZAR PROVEEDOR");
+                intent.putExtra("var_tipo", ProveedorCrudFormularioActivity.TIPO_ACTUALIZAR);
                 intent.putExtra("var_objeto", objProveedor);
                 startActivity(intent);
 
