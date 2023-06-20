@@ -17,6 +17,7 @@ import com.cibertec.movil_modelo_proyecto_2022_2.service.ServicePais;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceProveedor;
 import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceTipoProveedor;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -135,10 +136,12 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 objNewProveedor.setContacto(contacto);
                 objNewProveedor.setPais(objNewPais);
                 objNewProveedor.setTipoProveedor(objNewTipoProveedor);
+                objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                objNewProveedor.setEstado(1);
 
-                if (tipo.equals("REGISTRA")) {
+                if (tipo.equals("REGISTRAR")) {
                     insertaProveedor(objNewProveedor);
-                } else if (tipo.equals("ACTUALIZA")) {
+                } else if (tipo.equals("ACTUALIZAR")) {
                     Proveedor objAux = (Proveedor) extras.get("var_objeto");
                     objNewProveedor.setIdProveedor(objAux.getIdProveedor());
                     actualizaProveedor(objNewProveedor);
