@@ -136,8 +136,6 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 objNewProveedor.setContacto(contacto);
                 objNewProveedor.setPais(objNewPais);
                 objNewProveedor.setTipoProveedor(objNewTipoProveedor);
-                objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
-                objNewProveedor.setEstado(1);
 
                 if (tipo.equals("REGISTRAR")) {
                     insertaProveedor(objNewProveedor);
@@ -202,23 +200,23 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
         });
     }
 
-    public void cargaPais(){
+    public void cargaPais() {
         Call<List<Pais>> call = servicePais.listaPais();
         call.enqueue(new Callback<List<Pais>>() {
             @Override
             public void onResponse(Call<List<Pais>> call, Response<List<Pais>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     List<Pais> lst = response.body();
-                    for(Pais obj:lst){
-                        lstPais.add(obj.getIdPais()+":"+obj.getNombre());
+                    for (Pais obj : lst) {
+                        lstPais.add(obj.getIdPais() + ":" + obj.getNombre());
                     }
                     adaptadorPais.notifyDataSetChanged();
-                    if (tipo.equals("ACTUALIZA")){
+                    if (tipo.equals("ACTUALIZA")) {
                         Pais objPais = objProveedorSeleccionado.getPais();
-                        String aux2 = objPais.getIdPais()+":"+objPais.getNombre();
+                        String aux2 = objPais.getIdPais() + ":" + objPais.getNombre();
                         int pos = -1;
-                        for(int i=0; i< lstPais.size(); i++){
-                            if (lstPais.get(i).equals(aux2)){
+                        for (int i = 0; i < lstPais.size(); i++) {
+                            if (lstPais.get(i).equals(aux2)) {
                                 pos = i;
                                 break;
                             }
@@ -226,10 +224,11 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                         spnPais.setSelection(pos);
                     }
 
-                }else{
-                    mensajeAlert(""+response.message());
+                } else {
+                    mensajeAlert("" + response.message());
                 }
             }
+
             @Override
             public void onFailure(Call<List<Pais>> call, Throwable t) {
                 mensajeAlert("Error al acceder al Servicio Rest >>> " + t.getMessage());
@@ -237,23 +236,23 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
         });
     }
 
-    public void cargaTipoProveedor(){
+    public void cargaTipoProveedor() {
         Call<List<TipoProveedor>> call = serviceTipoProveedor.listaTodos();
         call.enqueue(new Callback<List<TipoProveedor>>() {
             @Override
             public void onResponse(Call<List<TipoProveedor>> call, Response<List<TipoProveedor>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     List<TipoProveedor> lst = response.body();
-                    for(TipoProveedor obj:lst){
-                        lstTipoProveedor.add(obj.getIdTipoProveedor()+":"+obj.getDescripcion());
+                    for (TipoProveedor obj : lst) {
+                        lstTipoProveedor.add(obj.getIdTipoProveedor() + ":" + obj.getDescripcion());
                     }
                     adaptadorTipoProveedor.notifyDataSetChanged();
-                    if (tipo.equals("ACTUALIZA")){
+                    if (tipo.equals("ACTUALIZA")) {
                         TipoProveedor objTipoProveedor = objProveedorSeleccionado.getTipoProveedor();
-                        String aux2 = objTipoProveedor.getIdTipoProveedor()+":"+objTipoProveedor.getDescripcion();
+                        String aux2 = objTipoProveedor.getIdTipoProveedor() + ":" + objTipoProveedor.getDescripcion();
                         int pos = -1;
-                        for(int i=0; i< lstTipoProveedor.size(); i++){
-                            if (lstTipoProveedor.get(i).equals(aux2)){
+                        for (int i = 0; i < lstTipoProveedor.size(); i++) {
+                            if (lstTipoProveedor.get(i).equals(aux2)) {
                                 pos = i;
                                 break;
                             }
@@ -261,10 +260,11 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                         spnTipoProveedor.setSelection(pos);
                     }
 
-                }else{
-                    mensajeAlert(""+response.message());
+                } else {
+                    mensajeAlert("" + response.message());
                 }
             }
+
             @Override
             public void onFailure(Call<List<TipoProveedor>> call, Throwable t) {
                 mensajeAlert("Error al acceder al Servicio Rest >>> " + t.getMessage());
