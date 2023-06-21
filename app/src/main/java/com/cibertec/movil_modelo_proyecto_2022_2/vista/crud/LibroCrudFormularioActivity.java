@@ -3,6 +3,7 @@ package com.cibertec.movil_modelo_proyecto_2022_2.vista.crud;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -106,10 +107,10 @@ public class LibroCrudFormularioActivity extends NewAppCompatActivity {
             objLibroSeleccionado = (Libro) extras.get("var_objeto");
 
             txtCrudNombre.setText(objLibroSeleccionado.getTitulo());
-            txtAnio.setText(objLibroSeleccionado.getAnio());
+            txtAnio.setText(String.valueOf(objLibroSeleccionado.getAnio()));
             txtSerie.setText(objLibroSeleccionado.getSerie());
             txtFechaRegistro.setText(objLibroSeleccionado.getFechaRegistro());
-            txtEstado.setText(objLibroSeleccionado.getEstado());
+            txtEstado.setText(String.valueOf(objLibroSeleccionado.getEstado()));
         }
         Locale.setDefault( new Locale("es_ES"));
 
@@ -183,15 +184,23 @@ public class LibroCrudFormularioActivity extends NewAppCompatActivity {
                 String fecCre = txtFechaRegistro.getText().toString();
                 String est = txtEstado.getText().toString();
 
+
+                Editable fecCrea = txtFechaRegistro.getText();
+                int cantidadCaracteres = fecCrea.length();
+
+                System.out.println("La cantidad de caracteres es: " + cantidadCaracteres);
+
                 if(!titul.matches(ValidacionUtil.TEXTO)) {
-
-                    txtCrudNombre.setError("La revista  es de 2 a 20 caracteres");
-
-
+                    txtCrudNombre.setError("El Titulo es de 2 a 20 caracteres");
+                }else if (an.length() <= 3){
+                    txtAnio.setError("El Año es de 4 Digitos");
                 }else if (!ser.matches(ValidacionUtil.TEXTO)) {
-                    txtSerie.setError("La fecha de creación es YYYY-MM-dd");
-                }else if (!fecCre.matches(ValidacionUtil.FECHA)) {
+                    txtSerie.setError("La Serie es de 2 a 20 caracteres");
+                }else if (fecCre.length() != 10) {
+                    System.out.println("La cantidad de caracteres es: " + cantidadCaracteres);
                     txtFechaRegistro.setError("La fecha de creación es YYYY-MM-dd");
+                }else if (!est.matches(ValidacionUtil.NUM_HIJOS)) {
+                    txtEstado.setError("El estado es de 1 caracter");
                 }
                 else{
 
