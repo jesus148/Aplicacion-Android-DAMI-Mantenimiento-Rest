@@ -9,11 +9,14 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ServiceProveedor {
     @POST("proveedor")
     public abstract Call<Proveedor> insertaProveedor(@Body Proveedor obj);
-
     @GET("proveedor")
     public abstract Call<List<Proveedor>> listaProveedor();
+    @PUT("proveedor")
+    public abstract Call<Proveedor> actualizaProveedor(@Body Proveedor objProveedor);
+
 }

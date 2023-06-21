@@ -7,7 +7,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface ServiceCategoria {
+public interface    ServiceCategoria {
 
     @GET("util/listaCategoriaDeEditorial")
     public Call<List<Categoria>> listaCategoriaDeEditorial();
