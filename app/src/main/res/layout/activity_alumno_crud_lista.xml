@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.crud.EditorialCrudListaActivity"
+    tools:context=".vista.crud.AlumnoCrudListaActivity"
     android:orientation="vertical">
 
     <TextView
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:padding="10dp"
-        android:text="Crud Editorial"
+        android:text="Crud Alumnos"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -26,7 +26,7 @@
         android:id="@+id/btnCrudRegistra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registra" />
+        android:text="Registrar" />
 
 
     <GridView
