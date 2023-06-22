@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cibertec.movil_modelo_proyecto_2022_2.R;
 import com.cibertec.movil_modelo_proyecto_2022_2.entity.Alumno;
@@ -21,6 +22,7 @@ import com.cibertec.movil_modelo_proyecto_2022_2.service.ServicePais;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.ValidacionUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -89,50 +91,25 @@ public class AlumnoCrudFormularioActivity extends NewAppCompatActivity {
         spnPais.setAdapter(adaptadorPais);
 
         txtFechaNacimiento.setOnClickListener(new View.OnClickListener() {
-
-
-            // cada vez que que demos click en el input creara un calendario
             @Override
-
             public void onClick(View view) {
-
                 Calendar myCalendar= Calendar.getInstance();
-
-                SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd", new Locale("es"));
-
                 new DatePickerDialog(
-
-
                         AlumnoCrudFormularioActivity.this,
-
                         new DatePickerDialog.OnDateSetListener() {
-
                             @Override
-
                             public void onDateSet(DatePicker datePicker, int year, int month , int day) {
-
-
-
+                                SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd", new Locale("es"));
                                 myCalendar.set(Calendar.YEAR, year);
-
                                 myCalendar.set(Calendar.MONTH,month);
-
                                 myCalendar.set(Calendar.DAY_OF_MONTH,day);
-
-                                txtFechaCrea.setText(dateFormat.format(myCalendar.getTime()));
-
+                                txtFechaNacimiento.setText(dateFormat.format(myCalendar.getTime()));
                             }
-
                         },
-
                         myCalendar.get(Calendar.YEAR),
-
                         myCalendar.get(Calendar.MONTH),
-
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-
             }
-
         });
 
         Bundle extras = getIntent().getExtras();
@@ -189,27 +166,48 @@ public class AlumnoCrudFormularioActivity extends NewAppCompatActivity {
 
                 Pais objNewPais = new Pais();
                 objNewPais.setIdPais(Integer.parseInt(pais.split(":")[0]));
+                if (!nom.matches(ValidacionUtil.TEXTO)){
+                    mensajeToast("El nombre es de 2 a 20 caracteres");
+                    txtNombre.setError("El nombre es de 2 a 20 caracteres");
+                }else if (!ape.matches(ValidacionUtil.TEXTO)){
+                    mensajeToast("El apellido es de 2 a 20 caracteres");
+                    txtApellido.setError("El apellido es de 2 a 20 caracteres");
+                }else if (!tel.matches(ValidacionUtil.CELULAR)){
+                    mensajeToast("El número celular es de 9 dígitos");
+                    txtTelefono.setError("El número celular es de 9 dígitos");
+                }else if (!dni.matches(ValidacionUtil.DNI)){
+                    mensajeToast("El DNI es de 8 dígitos");
+                    txtDni.setError("El DNI es de 8 dígitos");
+                }else if (!correo.matches(ValidacionUtil.CORREO)){
+                    mensajeToast("Formato incorrecto");
+                    txtCorreo.setError("Formato incorrecto");
+                }else if (!dir.matches(ValidacionUtil.DIRECCION)){
+                    mensajeToast("La dirección es de 3 a 30 caracteres");
+                    txtDireccion.setError("La dirección es de 3 a 30 caracteres");
+                }else if (!fecNa.matches(ValidacionUtil.FECHA)){
+                    mensajeToast("La fecha de nacimiento es YYYY-MM-dd");
+                    txtFechaNacimiento.setError("La fecha de nacimiento es YYYY-MM-dd");
+                }else {
+                    Alumno obj = new Alumno();
+                    obj.setNombres(nom);
+                    obj.setApellidos(ape);
+                    obj.setTelefono(tel);
+                    obj.setDni(dni);
+                    obj.setCorreo(correo);
+                    obj.setDireccion(dir);
+                    obj.setFechaNacimiento(fecNa);
+                    obj.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                    obj.setEstado(estado);
+                    obj.setPais(objNewPais);
+                    obj.setModalidad(objNewModalidad);
 
-                Alumno obj = new Alumno();
-                obj.setNombres(nom);
-                obj.setApellidos(ape);
-                obj.setTelefono(tel);
-                obj.setDni(dni);
-                obj.setCorreo(correo);
-                obj.setDireccion(dir);
-                obj.setFechaNacimiento(fecNa);
-                obj.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
-                obj.setEstado(estado);
-                obj.setPais(objNewPais);
-                obj.setModalidad(objNewModalidad);
-
-                if (tipo.equals("REGISTRA")){
-                    insertaAlumno(obj);
-                }else if (tipo.equals("ACTUALIZA")){
-                    Alumno objAux = (Alumno) extras.get("var_objeto");
-                    obj.setIdAlumno(objAux.getIdAlumno());
-                    actualizaAlumno(obj);
-
+                    if (tipo.equals("REGISTRA")) {
+                        insertaAlumno(obj);
+                    } else if (tipo.equals("ACTUALIZA")) {
+                        Alumno objAux = (Alumno) extras.get("var_objeto");
+                        obj.setIdAlumno(objAux.getIdAlumno());
+                        actualizaAlumno(obj);
+                    }
                 }
             }
         });
@@ -337,5 +335,8 @@ public class AlumnoCrudFormularioActivity extends NewAppCompatActivity {
             }
         });
     }
-
+    public void mensajeToast(String mensaje){
+        Toast toast1 =  Toast.makeText(getApplicationContext(),mensaje, Toast.LENGTH_LONG);
+        toast1.show();
+    }
 }
