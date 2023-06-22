@@ -9,14 +9,35 @@
     tools:context=".vista.crud.AutorCrudListaActivity">
 
     <TextView
+        android:id="@+id/idCrudTituloCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:padding="10dp"
-        android:text="@string/txt_crud_de_autor"
+        android:text="Crud Autor"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnCrudListar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar" />
+
+    <Button
+        android:id="@+id/btnCrudRegistra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registra" />
+
+
+    <GridView
+        android:id="@+id/gridCrudAutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="1"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"/>
 
 
 

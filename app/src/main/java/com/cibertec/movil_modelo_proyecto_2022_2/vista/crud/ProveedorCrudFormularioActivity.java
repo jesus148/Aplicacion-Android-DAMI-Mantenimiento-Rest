@@ -19,6 +19,7 @@ import com.cibertec.movil_modelo_proyecto_2022_2.service.ServiceTipoProveedor;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.ValidacionUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -124,30 +125,45 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 String pais = spnPais.getSelectedItem().toString();
                 String tipoProveedor = spnTipoProveedor.getSelectedItem().toString();
 
-                Pais objNewPais = new Pais();
-                objNewPais.setIdPais(Integer.parseInt(pais.split(":")[0]));
+                if (!razonSocial.matches(ValidacionUtil.TEXTO)) {
+                    mensajeAlert("La razon social es de 2 a 20 caracteres.");
+                } else if (!ruc.matches(ValidacionUtil.RUC)) {
+                    mensajeAlert("El RUC debe contener 11 dígitos.");
+                } else if (!direccion.matches(ValidacionUtil.DIRECCION)) {
+                    mensajeAlert("La dirección debe contener de 3 a 30 caracteres.");
+                } else if (!telefono.matches(ValidacionUtil.CELULAR)) {
+                    mensajeAlert("El telefono debe contener 9 dígitos.");
+                } else if (!celular.matches(ValidacionUtil.CELULAR)) {
+                    mensajeAlert("El celular debe contener 9 dígitos.");
+                } else if (!contacto.matches(ValidacionUtil.NOMBRE)) {
+                    mensajeAlert("El contacto debe contener de 3 a 30 caracteres.");
+                } else {
 
-                TipoProveedor objNewTipoProveedor = new TipoProveedor();
-                objNewTipoProveedor.setIdTipoProveedor(Integer.parseInt(tipoProveedor.split(":")[0]));
+                    Pais objNewPais = new Pais();
+                    objNewPais.setIdPais(Integer.parseInt(pais.split(":")[0]));
 
-                Proveedor objNewProveedor = new Proveedor();
-                objNewProveedor.setRazonsocial(razonSocial);
-                objNewProveedor.setRuc(ruc);
-                objNewProveedor.setDireccion(direccion);
-                objNewProveedor.setTelefono(telefono);
-                objNewProveedor.setCelular(celular);
-                objNewProveedor.setContacto(contacto);
-                objNewProveedor.setPais(objNewPais);
-                objNewProveedor.setTipoProveedor(objNewTipoProveedor);
-                objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
-                objNewProveedor.setEstado(1);
+                    TipoProveedor objNewTipoProveedor = new TipoProveedor();
+                    objNewTipoProveedor.setIdTipoProveedor(Integer.parseInt(tipoProveedor.split(":")[0]));
 
-                if (tipo.equals(TIPO_REGISTRAR)) {
-                    insertaProveedor(objNewProveedor);
-                } else if (tipo.equals(TIPO_ACTUALIZAR)) {
-                    Proveedor objAux = (Proveedor) extras.get("var_objeto");
-                    objNewProveedor.setIdProveedor(objAux.getIdProveedor());
-                    actualizaProveedor(objNewProveedor);
+                    Proveedor objNewProveedor = new Proveedor();
+                    objNewProveedor.setRazonsocial(razonSocial);
+                    objNewProveedor.setRuc(ruc);
+                    objNewProveedor.setDireccion(direccion);
+                    objNewProveedor.setTelefono(telefono);
+                    objNewProveedor.setCelular(celular);
+                    objNewProveedor.setContacto(contacto);
+                    objNewProveedor.setPais(objNewPais);
+                    objNewProveedor.setTipoProveedor(objNewTipoProveedor);
+                    objNewProveedor.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                    objNewProveedor.setEstado(1);
+
+                    if (tipo.equals(TIPO_REGISTRAR)) {
+                        insertaProveedor(objNewProveedor);
+                    } else if (tipo.equals(TIPO_ACTUALIZAR)) {
+                        Proveedor objAux = (Proveedor) extras.get("var_objeto");
+                        objNewProveedor.setIdProveedor(objAux.getIdProveedor());
+                        actualizaProveedor(objNewProveedor);
+                    }
                 }
             }
         });
