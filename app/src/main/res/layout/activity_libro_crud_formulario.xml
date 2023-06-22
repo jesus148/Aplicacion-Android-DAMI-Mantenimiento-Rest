@@ -7,15 +7,135 @@
     tools:context=".vista.crud.LibroCrudFormularioActivity"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:text="@string/txt_crud_de_libro"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/idCrudTituloCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:padding="10dp"
+                android:text="Registra Libro"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtCrudNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:layout_marginBottom="18dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="   Titulo"/>
+
+            <EditText
+                android:id="@+id/txtAnio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_marginBottom="18dp"
+                android:drawableLeft="@drawable/anio"
+                android:maxLength="4"
+                android:hint="   Año"/>
+
+            <EditText
+                android:id="@+id/txtSerie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:ems="10"
+                android:inputType="text"
+                android:drawableLeft="@drawable/serie"
+                android:hint="   Serie"/>
+
+            <EditText
+                android:id="@+id/txtFechaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:drawableLeft="@drawable/revista_3"
+                android:layout_marginBottom="18dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="   FechaRegistro"/>
+
+            <EditText
+                android:id="@+id/txtEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:ems="10"
+                android:inputType="number"
+                android:drawableLeft="@drawable/num"
+                android:maxLength="1"
+                android:hint="   Estado"/>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="Categoria"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <Spinner
+                android:id="@+id/spnCrudLibroCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="Pais"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <Spinner
+                android:id="@+id/spnCrudLibroPais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/btnCrudRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="REGISTRAR"/>
+
+            <Button
+                android:id="@+id/btnCrudRegresar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="REGRESAR"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

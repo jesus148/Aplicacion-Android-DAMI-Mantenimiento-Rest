@@ -86,7 +86,7 @@ public class EditorialCrudListaActivity extends NewAppCompatActivity {
             }
         });
 
-        lista();
+
     }
 
     public void lista(){
