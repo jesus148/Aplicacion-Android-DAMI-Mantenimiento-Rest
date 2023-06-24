@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:padding="10dp"
-        android:text="Crud Autor"
+        android:text="Mantenimiento Autor"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />

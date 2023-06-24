@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="País:"
+                android:text="Grado:"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
@@ -100,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Categoría:"
+                android:text="País:"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
