@@ -126,17 +126,17 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
                 String tipoProveedor = spnTipoProveedor.getSelectedItem().toString();
 
                 if (!razonSocial.matches(ValidacionUtil.TEXTO)) {
-                    mensajeAlert("La razon social es de 2 a 20 caracteres.");
+                    mensajeAlert("La razón social es de 2 a 20 caracteres.");
                 } else if (!ruc.matches(ValidacionUtil.RUC)) {
                     mensajeAlert("El RUC debe contener 11 dígitos.");
                 } else if (!direccion.matches(ValidacionUtil.DIRECCION)) {
-                    mensajeAlert("La dirección debe contener de 3 a 30 caracteres.");
+                    mensajeAlert("La dirección debe contener de 3 a 30 carácteres.");
                 } else if (!telefono.matches(ValidacionUtil.CELULAR)) {
-                    mensajeAlert("El telefono debe contener 9 dígitos.");
+                    mensajeAlert("El teléfono debe contener 9 dígitos.");
                 } else if (!celular.matches(ValidacionUtil.CELULAR)) {
                     mensajeAlert("El celular debe contener 9 dígitos.");
                 } else if (!contacto.matches(ValidacionUtil.NOMBRE)) {
-                    mensajeAlert("El contacto debe contener de 3 a 30 caracteres.");
+                    mensajeAlert("El contacto debe contener de 3 a 30 carácteres.");
                 } else {
 
                     Pais objNewPais = new Pais();
@@ -179,9 +179,9 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
             public void onResponse(Call<Proveedor> call, Response<Proveedor> response) {
                 if (response.isSuccessful()) {
                     Proveedor objSalida = response.body();
-                    String msg = "Se registró el Proveedor con exito\n";
+                    String msg = "Se registró el Proveedor con éxito\n";
                     msg += "ID : " + objSalida.getIdProveedor() + "\n";
-                    msg += "Razon Social : " + objSalida.getRazonsocial();
+                    msg += "Razón Social : " + objSalida.getRazonsocial();
                     mensajeAlert(msg);
                 } else {
                     mensajeAlert(response.toString());
@@ -205,9 +205,9 @@ public class ProveedorCrudFormularioActivity extends NewAppCompatActivity {
             public void onResponse(Call<Proveedor> call, Response<Proveedor> response) {
                 if (response.isSuccessful()) {
                     Proveedor objSalida = response.body();
-                    String msg = "Se actualizó el Proveedor con exito\n";
+                    String msg = "Se actualizó el Proveedor con éxito\n";
                     msg += "ID : " + objSalida.getIdProveedor() + "\n";
-                    msg += "Razon Social : " + objSalida.getRazonsocial();
+                    msg += "Razón Social : " + objSalida.getRazonsocial();
                     mensajeAlert(msg);
                 } else {
                     mensajeAlert(response.toString());
