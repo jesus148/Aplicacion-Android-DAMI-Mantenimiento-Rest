@@ -38,10 +38,10 @@ public class AutorConsultaDetalleActivity extends NewAppCompatActivity {
         txtDetalleNombre.setText("Nombre: "+objAutor.getNombres());
         txtDetalleApellido.setText("Apellido: "+objAutor.getApellidos());
         txtDetalleCorreo.setText("Correo: "+objAutor.getCorreo());
-        txtDetalleTelefono.setText("Telefono: "+objAutor.getTelefono());
+        txtDetalleTelefono.setText("Teléfono: "+objAutor.getTelefono());
         txtDetalleFechaNaci.setText("Fecha Nacimiento: "+objAutor.getFechaNacimiento());
         txtDetalleGrado.setText("Grado: "+objAutor.getGrado().getDescripcion());
-        txtDetallePais.setText("Pais: "+objAutor.getPais().getNombre());
+        txtDetallePais.setText("País: "+objAutor.getPais().getNombre());
 
         btnDetalleRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
