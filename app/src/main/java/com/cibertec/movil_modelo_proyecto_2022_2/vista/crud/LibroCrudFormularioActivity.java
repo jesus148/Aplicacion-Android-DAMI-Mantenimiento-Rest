@@ -220,7 +220,7 @@ public class LibroCrudFormularioActivity extends NewAppCompatActivity {
                     objNewCliente.setAnio(Integer.parseInt(an));
                     objNewCliente.setSerie(ser);
                     objNewCliente.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
-                    objNewCliente.setEstado(1);
+                    objNewCliente.setEstado(Integer.parseInt(est));
                     objNewCliente.setCategoria(objPaiss);
                     objNewCliente.setPais(objPais);
 
