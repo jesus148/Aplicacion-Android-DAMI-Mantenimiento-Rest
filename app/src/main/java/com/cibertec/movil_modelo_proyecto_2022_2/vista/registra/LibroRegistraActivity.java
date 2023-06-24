@@ -124,34 +124,43 @@ public class LibroRegistraActivity extends NewAppCompatActivity {
                 String an = txtAn.getText().toString();
                 String ser = txtSer.getText().toString();
                 String fecCre = txtFech.getText().toString();
-                String est = txtFech.getText().toString();
+                String est = txtEstado.getText().toString();
+                if(!titulo.matches(ValidacionUtil.TEXTO)) {
+                    txtTit.setError("El Titulo es de 2 a 20 caracteres");
+                }else if (an.length() <= 3){
+                    txtAn.setError("El Año es de 4 Digitos");
+                }else if (!ser.matches(ValidacionUtil.TEXTO)) {
+                    txtSer.setError("La Serie es de 2 a 20 caracteres");
+                }else if (fecCre.length() != 10) {
+                    txtFech.setError("La fecha de creación es YYYY-MM-dd");
+                }else if (!est.matches(ValidacionUtil.NUM_HIJOS)) {
+                    txtEstado.setError("El estado es de 1 caracter");
+                }
+                else {
+
+                    String cat = (String) spnCat.getSelectedItem();
+                    String idPaiss = cat.split(":")[0];
+                    Categoria objPaiss = new Categoria();
+                    objPaiss.setIdCategoria(Integer.parseInt(idPaiss));
+
+                    String pais = (String) spnPais.getSelectedItem();
+                    String idPais = pais.split(":")[0];
+                    Pais objPais = new Pais();
+                    objPais.setIdPais(Integer.parseInt(idPais));
 
 
-                String cat = (String) spnCat.getSelectedItem();
-                String idPaiss = cat.split(":")[0];
-                Categoria objPaiss = new Categoria();
-                objPaiss.setIdCategoria(Integer.parseInt(idPaiss));
-
-                String pais = (String) spnPais.getSelectedItem();
-                String idPais = pais.split(":")[0];
-                Pais objPais = new Pais();
-                objPais.setIdPais(Integer.parseInt(idPais));
-
+                    Libro objLibro = new Libro();
+                    objLibro.setTitulo(titulo);
+                    objLibro.setAnio(Integer.parseInt(an));
+                    objLibro.setSerie(ser);
+                    objLibro.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
+                    objLibro.setEstado(1);
+                    objLibro.setPais(objPais);
+                    objLibro.setCategoria(objPaiss);
 
 
-
-                Libro objLibro = new Libro();
-                objLibro.setTitulo(titulo);
-                objLibro.setAnio(Integer.parseInt(an));
-                objLibro.setSerie(ser);
-                objLibro.setFechaRegistro(FunctionUtil.getFechaActualStringDateTime());
-                objLibro.setEstado(1);
-                objLibro.setPais(objPais);
-                objLibro.setCategoria(objPaiss);
-
-
-                insertaLibro(objLibro);
-
+                    insertaLibro(objLibro);
+                }
             }
         });
 
