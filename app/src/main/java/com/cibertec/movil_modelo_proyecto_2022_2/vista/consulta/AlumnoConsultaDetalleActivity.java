@@ -39,11 +39,11 @@ public class AlumnoConsultaDetalleActivity extends NewAppCompatActivity {
         txtDetalleNombre.setText("Nombre: "+obj.getNombres());
         txtDetalleApellido.setText("Apellido: "+obj.getApellidos());
         txtDetalleCorreo.setText("Correo: "+obj.getCorreo());
-        txtDetalleTelefono.setText("Telefono: "+obj.getTelefono());
+        txtDetalleTelefono.setText("Teléfono: "+obj.getTelefono());
         txtDetalleFechaNaci.setText("Fecha Nacimiento: "+obj.getFechaNacimiento());
         txtDetalledni.setText("DNI: "+obj.getDni());
         txtDetalleDireccion.setText("Dirección: "+obj.getDireccion());
-        txtDetallePais.setText("Pais: "+obj.getPais().getNombre());
+        txtDetallePais.setText("País: "+obj.getPais().getNombre());
 
         btnDetalleRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
