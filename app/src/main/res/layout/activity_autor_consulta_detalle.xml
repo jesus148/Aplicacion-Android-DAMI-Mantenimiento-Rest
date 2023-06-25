@@ -11,7 +11,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="150dp"
         android:layout_weight="1"
         android:orientation="vertical">
         <TextView
@@ -27,50 +27,56 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/txtDetalleNombre"
-            android:text="DETALLE AUTOR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:text="DETALLE AUTOR"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/txtDetalleApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/txtDetalleCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/txtDetalleTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/txtDetalleFechaNaci"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
 
         <TextView
             android:id="@+id/txtDetalleGrado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/txtDetallePais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textAlignment="viewStart" />
 
         <Button
             android:id="@+id/btnDetalleRegresar"

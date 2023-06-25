@@ -127,17 +127,17 @@ public class ProveedorRegistraActivity extends NewAppCompatActivity {
                 TipoProveedor tipoProveedorProveedor = (TipoProveedor) spnTipoProveedorProveedor.getSelectedItem();
 
                 if (!razonSocialProveedor.matches(ValidacionUtil.TEXTO)) {
-                    mensajeAlert("La razon social es de 2 a 20 caracteres.");
+                    mensajeAlert("La razón social es de 2 a 20 carácteres.");
                 } else if (!rucProveedor.matches(ValidacionUtil.RUC)) {
                     mensajeAlert("El RUC debe contener 11 dígitos.");
                 } else if (!direccionProveedor.matches(ValidacionUtil.DIRECCION)) {
-                    mensajeAlert("La dirección debe contener de 3 a 30 caracteres.");
+                    mensajeAlert("La dirección debe contener de 3 a 30 carácteres.");
                 } else if (!telefonoProveedor.matches(ValidacionUtil.CELULAR)) {
-                    mensajeAlert("El telefono debe contener 9 dígitos.");
+                    mensajeAlert("El teléfono debe contener 9 dígitos.");
                 } else if (!celularProveedor.matches(ValidacionUtil.CELULAR)) {
                     mensajeAlert("El celular debe contener 9 dígitos.");
                 } else if (!contactoProveedor.matches(ValidacionUtil.NOMBRE)) {
-                    mensajeAlert("El contacto debe contener de 3 a 30 caracteres.");
+                    mensajeAlert("El contacto debe contener de 3 a 30 carácteres.");
                 } else if (spnPaisProveedor.getSelectedItemPosition() == 1) {
                     mensajeAlert("Seleccione un país.");
                 } else if (spnTipoProveedorProveedor.getSelectedItemPosition() == 1) {
