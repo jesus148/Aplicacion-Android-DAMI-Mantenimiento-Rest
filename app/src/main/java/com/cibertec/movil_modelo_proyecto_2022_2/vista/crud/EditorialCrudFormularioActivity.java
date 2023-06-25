@@ -21,6 +21,7 @@ import com.cibertec.movil_modelo_proyecto_2022_2.service.ServicePais;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.ConnectionRest;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.FunctionUtil;
 import com.cibertec.movil_modelo_proyecto_2022_2.util.NewAppCompatActivity;
+import com.cibertec.movil_modelo_proyecto_2022_2.util.ValidacionUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -170,6 +171,19 @@ public class EditorialCrudFormularioActivity extends NewAppCompatActivity {
                 String dir = txtDireccion.getText().toString();
                 String ruc = txtRuc.getText().toString();
                 String fec = txtFechaCrea.getText().toString();
+                if (!nom.matches(ValidacionUtil.TEXTO)){
+                    //mensajeToast("La razón social es de 2 a 20 caracteres");
+                    txtNombre.setError("la razon social es de 2 a 20 caracteres");
+                }else if (!ruc.matches(ValidacionUtil.RUC)){
+                    //mensajeToast("El RUC es 11 dígitos");
+                    txtRuc.setError("El RUC es 11 dígitos");
+                }else if (!dir.matches(ValidacionUtil.DIRECCION)){
+                    // mensajeToast("La dirección social es de 3 a 30 caracteres");
+                    txtDireccion.setError("La dirección social es de 3 a 30 caracteres");
+                }else if (!fec.matches(ValidacionUtil.FECHA)){
+                    // mensajeToast("La fecha de creación es YYYY-MM-dd");
+                    txtFechaCrea.setError("La fecha de creación es YYYY-MM-dd");
+                }else{
                 String pais = spnPais.getSelectedItem().toString();
                 String categoria = spnCategoria.getSelectedItem().toString();
 
@@ -195,7 +209,7 @@ public class EditorialCrudFormularioActivity extends NewAppCompatActivity {
                     Editorial objAux = (Editorial) extras.get("var_objeto");
                     objNewEditorial.setIdEditorial(objAux.getIdEditorial());
                     actualizaEditorial(objNewEditorial);
-                }
+                }}
             }
         });
 
