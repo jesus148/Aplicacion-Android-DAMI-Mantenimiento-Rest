@@ -138,17 +138,17 @@ public class RevistaConsultaDetalleActivity extends NewAppCompatActivity {
 
         txNombreTitulo.setText(objRevista.getNombre());
 
-        txtIdRevista.setText( "código de Revista : " + objRevista.getIdRevista());
+        txtIdRevista.setText( "Código de Revista : " + objRevista.getIdRevista());
 
-        txtFrecuencia.setText( "frecuencia de Revista : " +     objRevista.getFrecuencia());
+        txtFrecuencia.setText( "Frecuencia de Revista : " +     objRevista.getFrecuencia());
 
-        txtfeCreacion.setText( "creación de la Revista : " + objRevista.getFechaCreacion());
+        txtfeCreacion.setText( "Creación de la Revista : " + objRevista.getFechaCreacion());
 
-        txtEstado.setText("estado de la Revista : " +   objRevista.getEstado());
+        txtEstado.setText("Estado de la Revista : " +   objRevista.getEstado());
 
-        txtdescripcionModal.setText( "tipo de modalidad : " +   objRevista.getModalidad().getDescripcion());
+        txtdescripcionModal.setText( "Tipo de modalidad : " +   objRevista.getModalidad().getDescripcion());
 
-        txtNombrePais.setText(" Pais de la Revista  : " +    objRevista.getPais().getNombre());
+        txtNombrePais.setText(" País de la Revista  : " +    objRevista.getPais().getNombre());
 
 
 
