@@ -36,7 +36,7 @@
                 android:layout_marginBottom="18dp"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="   Titulo"/>
+                android:hint="   Título"/>
 
             <EditText
                 android:id="@+id/txtAnio"
@@ -58,6 +58,7 @@
                 android:layout_marginBottom="18dp"
                 android:ems="10"
                 android:inputType="text"
+
                 android:drawableLeft="@drawable/serie"
                 android:hint="   Serie"/>
 
@@ -69,6 +70,7 @@
                 android:drawableLeft="@drawable/revista_3"
                 android:layout_marginBottom="18dp"
                 android:ems="10"
+                android:visibility="gone"
                 android:inputType="datetime"
                 android:hint="   FechaRegistro"/>
 
@@ -92,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding="10dp"
-                android:text="Categoria"
+                android:text="Categoría"
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:textStyle="normal" />
@@ -109,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding="10dp"
-                android:text="Pais"
+                android:text="País"
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:textStyle="normal" />

@@ -196,9 +196,6 @@ public class LibroCrudFormularioActivity extends NewAppCompatActivity {
                     txtAnio.setError("El Año es de 4 Digitos");
                 }else if (!ser.matches(ValidacionUtil.TEXTO)) {
                     txtSerie.setError("La Serie es de 2 a 20 caracteres");
-                }else if (fecCre.length() != 10) {
-                    System.out.println("La cantidad de caracteres es: " + cantidadCaracteres);
-                    txtFechaRegistro.setError("La fecha de creación es YYYY-MM-dd");
                 }else if (!est.matches(ValidacionUtil.NUM_HIJOS)) {
                     txtEstado.setError("El estado es de 1 caracter");
                 }
