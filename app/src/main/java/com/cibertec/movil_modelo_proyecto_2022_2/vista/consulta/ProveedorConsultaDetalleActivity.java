@@ -36,13 +36,13 @@ public class ProveedorConsultaDetalleActivity extends NewAppCompatActivity {
         Proveedor objProveedor = (Proveedor) extras.get("VAR_OBJETO");
 
         txtDetalleCodigo.setText(Integer.toString(objProveedor.getIdProveedor()));
-        txtDetalleRazonSocial.setText("Razon Social: "+objProveedor.getRazonsocial());
+        txtDetalleRazonSocial.setText("Razón Social: "+objProveedor.getRazonsocial());
         txtDetalleRUC.setText("RUC: "+objProveedor.getRuc());
         txtDetalleDireccion.setText("Dirección: "+objProveedor.getDireccion());
-        txtDetalleTelefono.setText("Telefono: "+objProveedor.getTelefono());
+        txtDetalleTelefono.setText("Teléfono: "+objProveedor.getTelefono());
         txtDetalleCelular.setText("Celular: "+objProveedor.getCelular());
         txtDetalleContacto.setText("Contacto: "+objProveedor.getContacto());
-        txtDetallePais.setText("Pais: "+objProveedor.getPais().getNombre());
+        txtDetallePais.setText("País: "+objProveedor.getPais().getNombre());
         txtDetalleProveedor.setText("Proveedor: "+objProveedor.getTipoProveedor().getDescripcion());
 
         btnDetalleRegresar.setOnClickListener(new View.OnClickListener() {
