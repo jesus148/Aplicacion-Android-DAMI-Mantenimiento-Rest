@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:text="Razon Social"
+                android:text="Razón Social"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="30dp"
@@ -46,7 +46,7 @@
                 android:layout_margin="30dp"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:ems="10"
-                android:hint="Ingrese Razon Social"
+                android:hint="Ingrese Razón Social"
                 android:inputType="textPersonName"
                 android:padding="10dp" />
 
@@ -123,7 +123,7 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:text="Categoria"
+                android:text="Categoría"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="30dp"
@@ -142,7 +142,7 @@
 
             <TextView
                 android:id="@+id/textView7"
-                android:text="Pais"
+                android:text="País"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="30dp"

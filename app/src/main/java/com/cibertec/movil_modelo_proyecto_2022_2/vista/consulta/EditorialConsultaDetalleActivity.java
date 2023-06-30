@@ -32,9 +32,9 @@ public class EditorialConsultaDetalleActivity extends NewAppCompatActivity {
 
         txtDetalleTitulo.setText(objEditorial.getRazonSocial());
         txtDetalleFechaC.setText("Fecha de creación: "+objEditorial.getFechaCreacion());
-        txtDetalleCategoria.setText("Categoria: "+objEditorial.getCategoria().getDescripcion());
+        txtDetalleCategoria.setText("Categoría: "+objEditorial.getCategoria().getDescripcion());
         txtDetalleRuc.setText("Ruc: "+objEditorial.getRuc());
-        txtDetallePais.setText("Pais: "+objEditorial.getPais().getNombre());
+        txtDetallePais.setText("País: "+objEditorial.getPais().getNombre());
         txtDetalleDireccion.setText("Dirección: "+objEditorial.getDireccion());
 
         btnDetalleRegresar.setOnClickListener(new View.OnClickListener() {

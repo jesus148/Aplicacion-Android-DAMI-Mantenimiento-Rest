@@ -14,6 +14,16 @@ public class Editorial implements Serializable {
     private Pais pais;
     private Categoria categoria;
 
+    public Editorial(int idEditorial, String razonSocial, String direccion, String ruc, String fechaCreacion, String fechaRegistro, int estado) {
+        this.idEditorial = idEditorial;
+        this.razonSocial = razonSocial;
+        this.direccion = direccion;
+        this.ruc = ruc;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaRegistro = fechaRegistro;
+        this.estado = estado;
+    }
+
 
     public int getIdEditorial() {
         return idEditorial;

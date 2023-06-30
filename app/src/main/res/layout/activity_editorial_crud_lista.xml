@@ -23,6 +23,11 @@
         android:text="Listar" />
 
     <Button
+        android:id="@+id/btnCrearPdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CREAR PDF" />
+    <Button
         android:id="@+id/btnCrudRegistra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
