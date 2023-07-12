@@ -55,6 +55,8 @@
            android:horizontalSpacing="6dp"
             android:verticalSpacing="6dp"
 
+            probando mi git hub
+
     -->
     <GridView
         android:id="@+id/gridRevista"
