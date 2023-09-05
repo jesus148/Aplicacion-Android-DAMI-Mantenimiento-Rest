@@ -3,6 +3,8 @@ aplicación Android utilizando el Android Studio y un servicio de integración d
 
 =======================================================================================================
 
+api_rest_sistema_biblioteca -------> https://github.com/jorgejacinto9701/api_rest_sistema_biblioteca.git
+
 aplicación Android utilizando el Android Studio y un servicio de integración de datos y un portal administrativ
 
 OBJ 1.- Modelar una base de datos que se debe publicar en un hosting gratuito.
